@@ -1,0 +1,82 @@
+{
+	"table": {
+		"admins": [
+			"id int(11) not null",
+			"name varchar(50) not null",
+			"email varchar(50) not null",
+			"password varchar(50) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"users": [
+			"id int(11) not null",
+			"name varchar(255) not null",
+			"email varchar(255) not null",
+			"password varchar(255) not null",
+			"photo varchar(255) not null",
+			"role varchar(255) null",
+			"short_bio text null",
+			"address varchar(255) null",
+			"birthday date null",
+			"status int(1) null",
+			"has_exported_file int(11) null",
+			"created_at TIMESTAMP not null"
+		],
+		"contacts": [
+			"id int(11) not null",
+			"user_id int(11) not null",
+			"icon varchar(125) not null",
+			"value varchar(255) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"educations": [
+			"id int(11) not null",
+			"user_id int(11) not null",
+			"name varchar(255) not null",
+			"majority varchar(255) not null",
+			"start date not null",
+			"graduate date null",
+			"still_here int(1) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"experiences": [
+			"id int(11) not null",
+			"user_id int(11) not null",
+			"title varchar(255) not null",
+			"company varchar(255) not null",
+			"start date not null",
+			"end date null",
+			"still_here int(1) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"skills": [
+			"id int(11) not null",
+			"user_id int(11) not null",
+			"title varchar(255) not null",
+			"level varchar(55) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"certificates": [
+			"id int(11) not null",
+			"user_id int(11) not null",
+			"title varchar(255) not null",
+			"year int(5) not null",
+			"created_at TIMESTAMP not null"
+		]
+	},
+	"attribute": {
+		"PRIMARY": [
+			"admins.id",
+			"users.id",
+			"contacts.id",
+			"experiences.id",
+			"skills.id",
+			"educations.id"
+		],
+		"FOREIGN": [
+			"educations.user_id=>users.id",
+			"experiences.user_id=>users.id",
+			"skills.user_id=>users.id",
+			"contacts.user_id=>users.id"
+		]
+	}
+}

@@ -1,0 +1,6 @@
+Payment Status (in books table) :
+- 0 : Booking order created
+- 2 : When guest upload payment evidence, and it mean "pending"
+- 1 : Complete. Payment has accepted by admin
+- 8 : Guest requesting cancelation
+- 9 : Cancelation accepted

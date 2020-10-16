@@ -1,0 +1,25 @@
+a { color: #3498db; }
+.container {
+    position: absolute;
+    top: 0px;right: 0px;bottom: 0px;
+    width: 45%;
+    background-color: #fff;
+}
+.container .wrap { margin: 10%; }
+
+.illustration {
+    position: fixed;
+    bottom: 100px;left: 5%;
+    width: 40%;
+}
+.illustration img {
+    width: 100% !important;
+}
+
+@media (max-width: 480px) {
+    .container {
+        left: 0%;
+        width: 100%;
+        box-shadow: none;
+    }
+}

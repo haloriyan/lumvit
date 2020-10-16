@@ -1,0 +1,16 @@
+{
+	"name": "BikinCV",
+	"display": "fullscreen",
+	"shortname": "BikinCV",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "./image/icon/icon-120.png",
+			"sizes": "120x120"
+		},
+		{
+			"src": "./image/icon/icon-512.png",
+			"sizes": "512x512"
+		}
+	]
+}

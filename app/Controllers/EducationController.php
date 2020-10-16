@@ -28,7 +28,7 @@ class EducationController {
         $name = $req->name;
         $majority = $req->majority;
         $start = $req->start;
-        $graduate = $req->graduate;
+        $graduate = $req->graduate == "" ? date('Y-m-d') : $req->graduate;
         $still_here = $req->still_here == "true" ? 1 : 0;
 
         $saveData = DB::table('educations')->create([

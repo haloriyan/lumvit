@@ -8,6 +8,15 @@ header {
     color: #fff;
     z-index: 1;
 }
+header button {
+    float: right;
+    margin-right: 5%;
+    margin-top: 7px;
+    height: 45px;
+    padding: 0px 25px;
+    background-color: #fff;
+    color: #3498db;
+}
 header #tblMenu {
     float: left;
     width: 7%;
@@ -118,5 +127,8 @@ nav.active li .icon { text-align: left; }
     }
     .actionButton {
         bottom: 15%;
+    }
+    header button span {
+        display: none;
     }
 }

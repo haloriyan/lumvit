@@ -93,6 +93,7 @@ class DB {
             $separator = ($i++ < count($data) - 1) ? ", " : "";
             $query .= "$key" . $separator;
         }
+        $query .= ", created_at";
         $query .= ") VALUES (";
 
         $a = 0;
@@ -109,6 +110,7 @@ class DB {
             $separator = ($a++ < count($data) - 1) ? ", " : "";
             $query .= "$quote$value$quote" . $separator;
         }
+        $query .= ", '".date('Y-m-d H:i:s')."'";
         $query .= ")";
 
         return $this;

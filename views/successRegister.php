@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>fa/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>css/auth.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>image/icon/icon.png">
     <style>
         p { line-height: 40px; }
     </style>

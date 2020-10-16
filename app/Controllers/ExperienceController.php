@@ -31,7 +31,7 @@ class ExperienceController {
         $title = $req->title;
         $company = $req->company;
         $start = $req->start;
-        $end = $req->graduate;
+        $end = $req->graduate == "" ? date('Y-m-d') : $req->graduate;
         $still_here = $req->still_here == "true" ? 1 : 0;
 
         $saveData = DB::table('experiences')->create([
@@ -54,7 +54,7 @@ class ExperienceController {
         // 
     }
     public function delete($id) {
-        $deleteData = DB::table('experiences')->delete()->where('id', $id)->execute();
+        $deleteData = DB::table('experiences')->delete()->where('id', '=', $id)->execute();
         
         redirect('experience', [
             'message' => "Pengalaman berhasil dihapus"

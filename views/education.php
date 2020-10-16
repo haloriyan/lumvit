@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>js/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>js/flatpickr/dist/themes/material_blue.css">
     <link rel="stylesheet" href="<?= base_url() ?>css/app.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>image/icon/icon.png">
     <style>
         .box[readonly] { background: #fff; }
         .list p { font-size: 15px; }

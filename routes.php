@@ -17,6 +17,7 @@ $routes = [
     'success-register' => "GET:UserController@successRegister",
     'account-verification/{email}' => "GET:UserController@accountVerification",
 
+    'export' => "GET:UserController@exportPage",
     'export/{theme}' => "GET:UserController@export",
 
     'home' => "GET:UserController@home",
@@ -40,6 +41,7 @@ $routes = [
     'profile/photo' => "POST:UserController@uploadPhoto",
 
     'experience/store' => "POST:ExperienceController@store",
+    'experience/{id}/delete' => "GET:ExperienceController@delete",
 
     'education/store' => "POST:EducationController@store",
     'education/{id}/delete' => "GET:EducationController@delete",

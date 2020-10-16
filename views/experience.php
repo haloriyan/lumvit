@@ -39,7 +39,7 @@
                     <div class="list bayangan-5 mb-3 rounded smallPadding">
                         <div class="wrap">
                             <h3><?= $exp->title ?>
-                                <a href="<?= route('education/'.$exp->id.'/delete') ?>" class="teks-merah"><i class="fas fa-trash ke-kanan"></i></a>
+                                <a href="<?= route('experience/'.$exp->id.'/delete') ?>" class="teks-merah"><i class="fas fa-trash ke-kanan"></i></a>
                             </h3>
                             <p>di <?= $exp->company ?></p>
                             <div class="year">

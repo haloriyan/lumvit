@@ -389,6 +389,11 @@ table td form { display: inline-block; }
 .lebar-5 { width: 5%; }
 
 /* height */
+.tinggi-600 { height: 600px; }
+.tinggi-550 { height: 550px; }
+.tinggi-500 { height: 500px; }
+.tinggi-450 { height: 450px; }
+.tinggi-400 { height: 500px; }
 .tinggi-350 { height: 350px; }
 .tinggi-300 { height: 300px; }
 .tinggi-250 { height: 250px; }

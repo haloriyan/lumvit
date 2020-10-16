@@ -17,7 +17,7 @@ use App\Controllers\CertificateController as CertificateCtrl;
 
 class UserController {
     public function __construct() {
-        App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout']);
+        App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout','accountVerification','tentang','term','bantuan']);
     }
     public static function me() {
         $id = Session::get('user')->id;
@@ -232,6 +232,13 @@ class UserController {
 
         return view('accountVerification', [
             'user' => $user
+        ]);
+    }
+    public function exportPage() {
+        $myData = self::me();
+
+        return view('exportPage', [
+            'myData' => $myData
         ]);
     }
 }

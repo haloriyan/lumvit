@@ -51,7 +51,7 @@ function route($path = NULL, $params = NULL) {
 	if ($params != NULL) {
 		$path .= "?";
 		foreach ($params as $key => $value) {
-			$path .= "$key=$value&";
+			$path .= "$key=$value";
 		}
 	}
 	if ($path != NULL) {

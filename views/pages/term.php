@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>fa/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>css/index.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>image/icon/icon.png">
 </head>
 </head>
 <body>

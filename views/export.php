@@ -21,29 +21,17 @@
 <script>
     setTimeout(() => {
         html2canvas(select(".area")).then(cvs => {
-        document.body.innerHTML = ""
-        let lnk = document.createElement('a')
-        lnk.href = cvs.toDataURL()
-        lnk.download = "tes.png"
-        lnk.click()
-        document.body.appendChild(cvs)
-        setTimeout(() => {
-            window.location = "<?= route('export') ?>?message=" + btoa('CV berhasil diekspor') + "&isRedirected=1"
-        }, 1980);
-    })
+            document.body.innerHTML = ""
+            let lnk = document.createElement('a')
+            lnk.href = cvs.toDataURL()
+            lnk.download = "tes.png"
+            lnk.click()
+            document.body.appendChild(cvs)
+            setTimeout(() => {
+                window.location = "<?= route('export') ?>?message=" + btoa('CV berhasil diekspor') + "&isRedirected=1"
+            }, 1980);
+        })
     }, 1500);
-    // html2canvas(select(".area"), {
-    //     onrendered: cvs => {
-    //         let lnk = document.createElement('a')
-    //         lnk.href = cvs.toDataURL()
-    //         lnk.download = "tes.png"
-    //         lnk.click()
-    //         document.body.appendChild(cvs)
-    //         setTimeout(() => {
-    //             window.location = "<?= route('export') ?>?message=" + btoa('CV berhasil diekspor') + "&isRedirected=1"
-    //         }, 1980);
-    //     }
-    // })
 </script>
 
 </body>

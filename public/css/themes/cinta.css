@@ -1,0 +1,67 @@
+.area {
+    background-color: #f4d8e6;
+}
+.wrap.special {
+    margin: 10%;
+}
+.area .iconName {
+    border: 15px solid #444;
+    display: inline-block;
+    margin-top: 0px;
+    font-size: 100px;
+    font-family: Times;
+    width: 350px;
+    line-height: 350px;
+    text-align: center;
+    border-radius: 9000px;
+}
+.area .name {
+    font-family: Times;
+    font-size: 150px;
+    line-height: 220px;
+}
+.area .role {
+    font-family: Times;
+    font-size: 80px;
+}
+.area .contact div {
+    display: inline-block;
+}
+.area .contact .icon {
+    width: 100px;
+}
+.area .contact {
+    font-size: 55px;
+    line-height: 125px;
+}
+
+.area .section {
+    font-family: Times !important;
+    margin-top: 55px;
+}
+.area .section h3 {
+    font-size: 65px;
+    font-family: Times;
+    border-bottom: 10px solid #444;
+    line-height: 150px;
+}
+.area .bio p {
+    font-size: 50px;
+    line-height: 85px;
+    font-family: Times;
+}
+
+.area .skill {
+    border-bottom: 1px solid #444;
+    font-size: 40px;
+    line-height: 120px;
+}
+
+.area .exp h4 {
+    font-size: 50px;
+    font-family: Times;
+    margin-bottom: 0px;
+}
+.area .exp p {
+    font-size: 35px;
+}

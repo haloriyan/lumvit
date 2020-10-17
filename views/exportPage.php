@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>fa/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>css/app.css">
     <link rel="shortcut icon" href="<?= base_url() ?>image/icon/icon.png">
+    <style>
+        p.teks-transparan { font-size: 14px; }
+    </style>
 </head>
 <body>
 
@@ -28,6 +31,7 @@
                 <div class="smallPadding">
                     <div class="wrap">
                         <h3>Basic Template</h3>
+                        <p class="teks-transparan">ini hanya contoh gambar, bukan preview CV yang akan diexport</p>
                         <a href="<?= route('export/basic') ?>">
                             <button class="biru lebar-100 tinggi-40 p-0">Export!</button>
                         </a>
@@ -43,7 +47,24 @@
                 <div class="smallPadding">
                     <div class="wrap">
                         <h3>Alpha Template</h3>
+                        <p class="teks-transparan">ini hanya contoh gambar, bukan preview CV yang akan diexport</p>
                         <a href="<?= route('export/alpha') ?>">
+                            <button class="biru lebar-100 tinggi-40 p-0">Export!</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bagi bagi-3">
+        <div class="wrap">
+            <div class="bayangan-5">
+                <img src="<?= base_url() ?>image/preview/cinta.png" class="lebar-100" />
+                <div class="smallPadding">
+                    <div class="wrap">
+                        <h3>Cinta Template</h3>
+                        <p class="teks-transparan">ini hanya contoh gambar, bukan preview CV yang akan diexport</p>
+                        <a href="<?= route('export/cinta') ?>">
                             <button class="biru lebar-100 tinggi-40 p-0">Export!</button>
                         </a>
                     </div>

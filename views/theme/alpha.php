@@ -1,6 +1,7 @@
 <div class="bagKiri">
     <div class="picture" bg-image="<?= base_url() ?>storage/photo/<?= $myData->photo ?>"></div>
     <h2 class="name"><?= $myData->name ?></h2>
+    <h4><?= $myData->role ?></h4>
     <p class="short_bio"><?= $myData->short_bio ?></p>
     <div class="wrap">
         <?php if (count($contacts) != 0) : ?>
@@ -11,6 +12,10 @@
                     <div class="value"><?= $contact->value ?></div>
                 </div>
             <?php endforeach ?>
+            <div class="contact">
+                <div class="icon"><i class="fas fa-map-marker"></i></div>
+                <div class="value"><?= $myData->address ?></div>
+            </div>
         <?php endif ?>
     </div>
 </div>

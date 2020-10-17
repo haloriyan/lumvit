@@ -1,0 +1,102 @@
+.area {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 100px;
+    background-color: #fff;
+}
+.area .bagKiri {
+    background-color: #228080;
+    position: absolute;
+    top: 0px;left: 0px;bottom: 0px;
+    width: 40%;
+    color: #fff;
+    text-align: center;
+}
+.area .bagKiri .picture {
+    width: 600px;
+    height: 600px;
+    border-radius: 9000px;
+    display: inline-block;
+    margin-top: 400px;
+}
+.area .bagKiri .name {
+    font-size: 90px;
+    margin-top: 130px;
+}
+.area .bagKiri .short_bio {
+    font-size: 55px;
+    padding: 0px 50px;
+    line-height: 90px;
+    text-align: left;
+}
+.area .bagKiri h3 {
+    font-size: 80px;
+    border-bottom: 10px solid #fff;
+    line-height: 180px;
+    text-align: left;
+}
+.area .contact {
+    font-size: 50px;
+    line-height: 120px;
+    text-align: left;
+}
+.area .contact div {
+    display: inline-block;
+}
+.area .contact .icon {
+    width: 100px;
+    text-align: left;
+}
+
+.area .bagKanan {
+    position: absolute;
+    top: 0px;right: 0px;bottom: 0px;
+    width: 60%;
+    text-align: left;
+}
+.area .bagKanan h2 {
+    margin-bottom: 80px;
+}
+.area .bagKanan h2 div {
+    display: inline-block;
+    font-size: 45px;
+}
+.area .bagKanan h2 .icon {
+    width: 150px;
+    line-height: 150px;
+    background-color: #228080;
+    text-align: center;
+    border-radius: 900px;
+    color: #fff;
+    margin-right: 50px;
+}
+
+.area .bagKanan .edu {
+    border-left: 6px solid #228080;
+}
+.area .bagKanan h3 {
+    font-size: 42px;
+}
+.area .bagKanan h4 {
+    margin: 0px;
+    font-size: 40px;
+}
+.area .bagKanan .edu p {
+    font-size: 28px;
+}
+.area .bagKanan .skill {
+    margin-bottom: 90px;
+}
+.area .bagKanan .skill .bars {
+    height: 30px;
+    background-color: #ddd;
+}
+.area .bagKanan .skill .bars .value {
+    background-color: #228080;
+    width: 25%;
+    height: 30px;
+}
+.area .bagKanan .certificate p {
+    font-size: 40px;
+}

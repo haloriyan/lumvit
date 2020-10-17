@@ -36,6 +36,21 @@
             </div>
         </div>
     </div>
+    <div class="bagi bagi-3">
+        <div class="wrap">
+            <div class="bayangan-5">
+                <img src="<?= base_url() ?>image/preview/alpha.png" class="lebar-100" />
+                <div class="smallPadding">
+                    <div class="wrap">
+                        <h3>Alpha Template</h3>
+                        <a href="<?= route('export/alpha') ?>">
+                            <button class="biru lebar-100 tinggi-40 p-0">Export!</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="marginBottom"></div>
 </div>
     

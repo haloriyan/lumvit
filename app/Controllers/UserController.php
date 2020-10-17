@@ -19,6 +19,12 @@ class UserController {
     public function __construct() {
         App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout','accountVerification','tentang','term','bantuan']);
     }
+    public function hasLoggedIn() {
+        $user = Session::get('user');
+        if ($user != "") {
+            redirect('profile');
+        }
+    }
     public static function me() {
         $id = Session::get('user')->id;
         return DB::table('users')->select()->where('id', '=', $id)->first();
@@ -36,9 +42,11 @@ class UserController {
         return view('pages.bantuan');
     }
     public function loginPage() {
+        $this->hasLoggedIn();
         return view('login');
     }
     public function registerPage() {
+        $this->hasLoggedIn();
         return view('register');
     }
     public function login(Request $req) {

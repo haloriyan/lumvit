@@ -29,7 +29,8 @@
             <?php endforeach ?>
         </div>
 
-        <div class="bagi bagi-3 experienceArea section rata-kiri">
+        <?php if (count($experiences) != 0) : ?>
+        <div class="experienceArea section rata-kiri">
             <div class="wrap">
                 <h2>Pengalaman</h2>
                 <?php foreach ($experiences as $exp) : ?>
@@ -40,7 +41,9 @@
                 <?php endforeach ?>
             </div>
         </div>
-        <div class="bagi bagi-3 skillArea section rata-kiri">
+        <?php endif ?>
+        <?php if (count($skills) != 0) : ?>
+        <div class="skillArea section rata-kiri">
             <div class="wrap">
                 <h2>Keahlian</h2>
                 <?php foreach ($skills as $skill) : ?>
@@ -50,7 +53,9 @@
                 <?php endforeach ?>
             </div>
         </div>
-        <div class="bagi bagi-3 educationArea section rata-kiri">
+        <?php endif ?>
+        <?php if (count($educations) != 0) : ?>
+        <div class="educationArea section rata-kiri">
             <div class="wrap">
                 <h2>Pendidikan</h2>
                 <?php foreach ($educations as $edu) : ?>
@@ -64,17 +69,20 @@
                 <?php endforeach ?>
             </div>
         </div>
-        <div class="bagi lebar-100 section rata-kiri">
-            <div class="wrap">
-                <h2>Sertifikasi dan Penghargaan</h2>
-                <?php foreach ($certificates as $cert) : ?>
-                    <div class="cert bagi bagi-2">
-                        <h3><?= $cert->title ?></h3>
-                        <p><?= \Carbon\Carbon::parse($cert->year)->format('M, Y') ?></p>
-                    </div>
-                <?php endforeach ?>
+        <?php endif ?>
+        <?php if (count($certificates) != 0) : ?>
+            <div class="section rata-kiri">
+                <div class="wrap">
+                    <h2>Sertifikasi dan Penghargaan</h2>
+                    <?php foreach ($certificates as $cert) : ?>
+                        <div class="cert bagi bagi-2">
+                            <h3><?= $cert->title ?></h3>
+                            <p><?= \Carbon\Carbon::parse($cert->year)->format('M, Y') ?></p>
+                        </div>
+                    <?php endforeach ?>
+                </div>
             </div>
-        </div>
+        <?php endif ?>
     </div>
 </div>
 
@@ -82,15 +90,15 @@
 <script src="<?= base_url() ?>js/html2canvas.min.js"></script>
 <script>
     html2canvas(select(".area")).then(cvs => {
-        document.body.innerHTML = ""
-        let lnk = document.createElement('a')
-        lnk.href = cvs.toDataURL()
-        lnk.download = "tes.png"
-        lnk.click()
-        document.body.appendChild(cvs)
-        setTimeout(() => {
-            window.location = "<?= route('export') ?>?message=" + btoa('CV berhasil diekspor') + "&isRedirected=1"
-        }, 1980);
+        // document.body.innerHTML = ""
+        // let lnk = document.createElement('a')
+        // lnk.href = cvs.toDataURL()
+        // lnk.download = "tes.png"
+        // lnk.click()
+        // document.body.appendChild(cvs)
+        // setTimeout(() => {
+        //     window.location = "<?= route('export') ?>?message=" + btoa('CV berhasil diekspor') + "&isRedirected=1"
+        // }, 1980);
     })
 </script>
 

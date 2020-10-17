@@ -30,7 +30,7 @@
             <div class="mt-2">Password :</div>
             <input type="password" class="box" name="password" required>
             <div class="mt-2">
-                <input type="checkbox" id="agreement" required> <label for="agreement">Saya setuju dengan aturan di <a href="<?= route('term') ?>">Terms &amp; Condition</a></label>
+                <input type="checkbox" id="agreement" required> <label for="agreement">Saya setuju dengan aturan di <a href="<?= route('term') ?>" target="_blank">Terms &amp; Condition</a></label>
             </div>
             <button class="lebar-100 mt-3 biru">Register</button>
         </form>

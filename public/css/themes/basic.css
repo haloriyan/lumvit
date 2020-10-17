@@ -48,7 +48,13 @@ body { color: #252e3e; }
 }
 .contactArea .contact i { font-size: 53px; }
 
-.section.bagi-3 { width: 32%; }
+.experienceArea,.educationArea,.skillArea {
+    width: 33.333%;
+    margin: -7px;
+    vertical-align: top;
+    display: inline-block;
+}
+
 .section h2 {
     background-color: #252e3e;
     color: #fff;

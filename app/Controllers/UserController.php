@@ -75,11 +75,25 @@ class UserController {
         Session::unset('user');
         return redirect('login');
     }
+    public function isEmailHasUsed($email) {
+        $check = DB::table('users')->select('email')->where('email', '=', $email)->first();
+        if ($check == "") {
+            return false;
+        }
+        return true;
+    }
     public function register(Request $req) {
         $baseUrl = env('BASE_URL');
         $name = $req->name;
         $email = $req->email;
         $password = md5($req->password);
+
+        if ($this->isEmailHasUsed($email)) {
+            redirect('register', [
+                'message' => "Email sudah terdaftar. Mohon masukkan email yang lainnya",
+                'isError' => "true"
+            ]);
+        }
 
         $saveData = DB::table('users')->create([
             'name' => $name,
@@ -102,7 +116,8 @@ class UserController {
 
         if (!$saveData) {
             return redirect('register', [
-                'message' => "Gagal mendaftar"
+                'message' => "Gagal mendaftar",
+                'isError' => "true"
             ]);
         }
 

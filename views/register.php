@@ -18,7 +18,8 @@
     <div class="wrap">
         <h1>Register</h1>
         <?php if(@$message != "") : ?>
-            <div class="mt-4 bg-merah-transparan rounded p-2 mt-3">
+            <?php $bg = $isError == "true" ? "bg-merah-transparan" : "bg-hijau-transparan"; ?>
+            <div class="mt-4 <?= $bg ?> rounded p-2 mt-3">
                 <?= $message ?>
             </div>
         <?php endif ?>

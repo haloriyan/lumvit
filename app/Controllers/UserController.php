@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Framework\DB;
+use App\Framework\Curl;
 use App\Framework\Session;
 use App\Framework\Request;
 use App\Framework\Storage;
@@ -17,7 +18,7 @@ use App\Controllers\CertificateController as CertificateCtrl;
 
 class UserController {
     public function __construct() {
-        App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout','accountVerification','tentang','term','bantuan']);
+        App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout','accountVerification','tentang','term','bantuan','test']);
     }
     public function hasLoggedIn() {
         $user = Session::get('user');
@@ -49,27 +50,73 @@ class UserController {
         $this->hasLoggedIn();
         return view('register');
     }
+    public function isUserExists($name, $email) {
+        $u = DB::table('users')->select('name', 'email')->where([
+            ['name', '=', $name],
+            ['email', '=', $email]
+        ])->first();
+
+        if ($u == "") {
+            return false;
+        }
+        return true;
+    }
     public function login(Request $req) {
         $email = $req->email;
         $password = md5($req->password);
+        $isUsingGoogle = $req->isUsingGoogle;
+        $loginCriteria = [
+            ['email', '=', $email],
+            ['password', '=', $password]
+        ];
+        
+        if ($isUsingGoogle == "1") {
+            $name = $req->name;
+            $password = md5("withgoogle");
+            $loginCriteria = [
+                ['email', '=', $email]
+            ];
+            if (!$this->isUserExists($name, $email)) {
+                $this->registerWithGoogle($name, $email, $password);
+            }
+        }
 
         $loggingIn = DB::table('users')
                         ->select('id', 'status')
-                        ->where([
-                            ['email', '=', $email],
-                            ['password', '=', $password]
-                        ])
+                        ->where($loginCriteria)
                         ->first();
 
         if ($loggingIn == "") {
-            return redirect('login', [
-                'message' => "Email / Password salah"
-            ]);
+            if ($isUsingGoogle != 1) {
+                return redirect('login', [
+                    'message' => "Email / Password salah"
+                ]);
+            }else {
+                echo json_encode([
+                    'status' => 400,
+                    'message' => "Email / Password salah"
+                ]);
+            }
             return false;
         }
 
         Session::set('user', $loggingIn);
-        redirect('profile');
+        if ($isUsingGoogle != 1) {
+            redirect('profile');
+        }else {
+            echo json_encode([
+                'status' => 200,
+                'message' => "Berhasil login"
+            ]);
+        }
+    }
+    public function registerWithGoogle($name, $email, $password) {
+        return Curl::post(route('registerAction'), [
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'isUsingGoogle' => 1
+        ]);
     }
     public function logout() {
         Session::unset('user');
@@ -87,23 +134,28 @@ class UserController {
         $name = $req->name;
         $email = $req->email;
         $password = md5($req->password);
+        $isUsingGoogle = $req->isUsingGoogle;
+        $status = $isUsingGoogle == 1 ? 1 : 0;
 
         if ($this->isEmailHasUsed($email)) {
-            redirect('register', [
-                'message' => "Email sudah terdaftar. Mohon masukkan email yang lainnya",
-                'isError' => "true"
-            ]);
+            if ($req->withGoogle != "1") {
+                redirect('register', [
+                    'message' => "Email sudah terdaftar. Mohon masukkan email yang lainnya",
+                    'isError' => "true"
+                ]);
+            }
         }
 
         $saveData = DB::table('users')->create([
             'name' => $name,
             'email' => $email,
             'password' => $password,
-            'status' => 0,
+            'status' => $status,
             'photo' => "default.png",
         ])->execute();
 
-        $sendMail = Mailer::to($email, $name)
+        if ($isUsingGoogle != 1) {
+            $sendMail = Mailer::to($email, $name)
                     ->subject("Selesaikan Pendaftaran di BikinCV App")
                     ->from(env('MAIL_USERNAME'), env('APP_NAME'))
                     ->send(
@@ -113,15 +165,29 @@ class UserController {
                             'baseUrl' => $baseUrl
                         ])
                     );
-
-        if (!$saveData) {
-            return redirect('register', [
-                'message' => "Gagal mendaftar",
-                'isError' => "true"
-            ]);
         }
 
-        return redirect('success-register');
+        if (!$saveData) {
+            if ($isUsingGoogle != 1) {
+                return redirect('register', [
+                    'message' => "Gagal mendaftar",
+                    'isError' => "true"
+                ]);
+            }else {
+                return json_encode([
+                    'status' => 400,
+                    'message' => "Gagal register"
+                ]);
+            }
+        }
+        if ($isUsingGoogle != 1) {
+            return redirect('success-register');
+        }else {
+            return json_encode([
+                'status' => 200,
+                'message' => "Sukses register"
+            ]);
+        }
     }
     public function successRegister() {
         return view('successRegister');

@@ -23,7 +23,7 @@
         <h1>Registrasi Berhasil</h1>
         
         <p class="mt-3">
-            Terima kasih telah mendaftar di Aplikasi Lumvit. Sebelum dapat membuat <i>Curriculum Vitae</i>, Anda harus mengaktifkan akun dengan mengklik tautan yang terkirim pada email Anda. Coba cek folder spam apabila Anda tidak menemukannya.
+            Terima kasih telah mendaftar di Aplikasi Lumvit. Sebelum dapat membuat <i>Curriculum Vitae</i>, kamu harus mengaktifkan akun dengan mengklik tautan yang terkirim pada email kamu. Coba cek folder spam apabila kamu tidak menemukannya.
         </p>
 
     </div>

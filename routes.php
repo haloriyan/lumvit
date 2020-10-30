@@ -44,5 +44,5 @@ $routes = [
     'experience/{id}/delete' => "GET:ExperienceController@delete",
 
     'education/store' => "POST:EducationController@store",
-    'education/{id}/delete' => "GET:EducationController@delete",
+	'education/{id}/delete' => "GET:EducationController@delete",
 ];

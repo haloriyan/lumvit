@@ -19,7 +19,10 @@ use App\Controllers\CertificateController as CertificateCtrl;
 class UserController {
     public function __construct() {
         App::middleware('User', ['loginPage','registerPage','successRegister','login','register','index','tentang','bantuan','logout','accountVerification','tentang','term','bantuan','test']);
-    }
+	}
+	public function get($userID) {
+		return DB::table('users')->select()->where('id', '=', $userID)->first();
+	}
     public function hasLoggedIn() {
         $user = Session::get('user');
         if ($user != "") {
@@ -329,5 +332,5 @@ class UserController {
         return view('exportPage', [
             'myData' => $myData
         ]);
-    }
+	}
 }

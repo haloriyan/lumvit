@@ -24,6 +24,7 @@
             <?= @$message ?>
         </div>
     <?php endif ?>
+    <!--
     <div class="bagi bagi-3">
         <div class="wrap">
             <div class="bayangan-5">
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div>
+    -->
     <div class="bagi bagi-3">
         <div class="wrap">
             <div class="bayangan-5">

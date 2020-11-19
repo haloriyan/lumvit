@@ -2,7 +2,8 @@
 
 $routes = [
     'password' => function() {
-        echo base64_encode("riyan.satria.619@gmail.com");
+        // echo base64_encode("riyan.satria.619@gmail.com");
+        echo md5("sandinepodo");
     },
     
     '/' => 'GET:UserController@index',
@@ -44,5 +45,11 @@ $routes = [
     'experience/{id}/delete' => "GET:ExperienceController@delete",
 
     'education/store' => "POST:EducationController@store",
-	'education/{id}/delete' => "GET:EducationController@delete",
+    'education/{id}/delete' => "GET:EducationController@delete",
+    
+    'admin/login' => "GET:AdminController@loginPage",
+    'admin/loginAction' => "POST:AdminController@login",
+    'admin/logout' => "GET:AdminController@logout",
+    'admin/dashboard' => "GET:AdminController@dashboard",
+    'admin/users' => "GET:AdminController@users"
 ];

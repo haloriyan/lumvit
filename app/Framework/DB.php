@@ -324,17 +324,17 @@ class DB {
         if (count(self::$paginationLinks) > 1) {
             echo "<div class='pagination_links'>";
             if ($prev >= 1) {
-                echo "<a href='".route()."?page=".$prev."'><div class='items'><i class='fas fa-angle-left'></i></i></div></a>";
+                echo "<a href='".base_url().route()."?page=".$prev."'><div class='items'><i class='fas fa-angle-left'></i></i></div></a>";
             }
             for ($i = 1; $i <= count(self::$paginationLinks); $i++) {
                 if ($page != $i) {
-                    echo "<a href='".route()."?page=$i'><div class='items'>$i</div></a>";
+                    echo "<a href='".base_url().route()."?page=$i'><div class='items'>$i</div></a>";
                 }else {
                     echo "<div class='items active'>$i</div>";
                 }
             }
             if ($next <= count(self::$paginationLinks)) {
-                echo "<a href='".route()."?page=".$next."'><div class='items'><i class='fas fa-angle-right'></i></i></div></a>";
+                echo "<a href='".base_url().route()."?page=".$next."'><div class='items'><i class='fas fa-angle-right'></i></i></div></a>";
             }
             echo "</div>";
         }

@@ -61,6 +61,12 @@
 			"title varchar(255) not null",
 			"year int(5) not null",
 			"created_at TIMESTAMP not null"
+		],
+		"admins": [
+			"id int(11) not null",
+			"username varchar(255) not null",
+			"password varchar(255) not null",
+			"created_at TIMESTAMP not null"
 		]
 	},
 	"attribute": {

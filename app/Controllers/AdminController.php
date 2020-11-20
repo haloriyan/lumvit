@@ -53,4 +53,25 @@ class AdminController {
             'users' => $users
         ]);
     }
+    public function userDetail($id) {
+        $user = DB::table('users')->select()->where('id', '=', $id)
+        ->with('educations', [
+            'user_id' => 'id'
+        ])
+        ->with('skills', [
+            'user_id' => 'id'
+        ])
+        ->with('experiences', [
+            'user_id' => 'id'
+        ])
+        ->with('contacts', [
+            'user_id' => 'id'
+        ])
+        ->first();
+
+        // echo json_encode($user);
+        return view('admin.userDetail', [
+            'user' => $user
+        ]);
+    }
 }

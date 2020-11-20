@@ -31,6 +31,11 @@
                     <td><?= $user->name ?></td>
                     <td><?= $user->email ?></td>
                     <td><?= $user->has_exported_file ?></td>
+                    <td>
+                        <a href="<?= route('admin/user/'.$user->id.'/detail') ?>" class="teks-biru">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>

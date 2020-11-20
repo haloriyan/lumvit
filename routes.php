@@ -51,5 +51,7 @@ $routes = [
     'admin/loginAction' => "POST:AdminController@login",
     'admin/logout' => "GET:AdminController@logout",
     'admin/dashboard' => "GET:AdminController@dashboard",
-    'admin/users' => "GET:AdminController@users"
+    'admin/users' => "GET:AdminController@users",
+
+    'admin/user/{id}/detail' => "GET:AdminController@userDetail"
 ];
